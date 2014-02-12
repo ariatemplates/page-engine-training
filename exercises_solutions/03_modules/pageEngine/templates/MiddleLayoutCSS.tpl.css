@@ -1,0 +1,20 @@
+{CSSTemplate {
+	$classpath : "exercises.handson.pageEngine.templates.MiddleLayoutCSS"
+}}
+
+	{macro main()}
+
+		.top {
+			border-bottom: 1px solid #c7c7cc;
+			padding: 10px;
+			color: #34aadc;
+			font-weight: bold;
+		}
+
+		.bottom {
+			padding: 10px;
+		}
+
+	{/macro}
+
+{/CSSTemplate}

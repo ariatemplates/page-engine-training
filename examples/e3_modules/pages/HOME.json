@@ -1,0 +1,24 @@
+{
+    pageComposition : {
+        template : "examples.e3_modules.templates.MainLayout",
+        placeholders : {
+        	"header" : {
+        		template : "examples.e3_modules.templates.HeaderLayout"
+        	},
+        	"header.leftPanel" : "Phone book | Home",
+        	"header.rightPanel" : {
+        		template : "examples.e3_modules.templates.login.HeaderLogin",
+        		module : "common:login"
+        	},
+        	"middle" : {
+        		template : "examples.e3_modules.templates.MiddleLayout"
+        	},
+        	"middle.leftPanel" : {
+        		template : "examples.e3_modules.templates.Menu"
+        	},
+        	"middle.rightPanel" : "<div style=\"padding: 10px\">Welcome to your phone book!</div>",
+        	"footer" : "Just a footer, we might need it later"
+        }
+    },
+    pageId : "HOME"
+}

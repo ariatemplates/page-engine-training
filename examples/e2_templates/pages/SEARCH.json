@@ -1,0 +1,21 @@
+{
+    pageComposition : {
+        template : "examples.e2_templates.templates.MainLayout",
+        placeholders : {
+        	"header" : {
+        		template : "examples.e2_templates.templates.HeaderLayout"
+        	},
+        	"header.leftPanel" : "Phone book | Search",
+        	"header.rightPanel" : "Login",
+        	"middle" : {
+        		template : "examples.e2_templates.templates.MiddleLayout"
+        	},
+        	"middle.leftPanel" : {
+        		template : "examples.e2_templates.templates.Menu"
+        	},
+        	"middle.rightPanel" : "<div style=\"padding: 10px\">Here we will add a search module</div>",
+        	"footer" : "Just a footer, we might need it later"
+        }
+    },
+    pageId : "SEARCH"
+}

@@ -1,0 +1,30 @@
+{CSSTemplate {
+	$classpath : "examples.e3_modules.templates.MenuCSS"
+}}
+
+	{macro main()}
+
+		.menu {
+		}
+
+		.menu-item {
+			border-bottom: 1px solid #c7c7cc;
+			height: 70px;
+			padding: 10px;
+			color: #c7c7cc;
+			cursor: pointer;
+		}
+
+		.menu-item:hover {
+			color: white;
+			background-color: #ff9500;
+		}
+
+		.menu-item .label {
+			margin-top: 20px;
+			display: inline-block;
+		}
+
+	{/macro}
+
+{/CSSTemplate}

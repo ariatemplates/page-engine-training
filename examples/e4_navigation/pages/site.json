@@ -1,0 +1,10 @@
+{
+	containerId : "main-container",
+	navigation : "hash",
+	animations : true,
+	commonModules: {
+		login : {
+			classpath : "examples.e4_navigation.modules.login.Login"
+		}
+	}
+}

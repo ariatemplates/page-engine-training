@@ -1,0 +1,156 @@
+body {
+  line-height: 1.4em;
+}
+#header .logo h5 {
+  background-image: url(http://ariatemplates.com/images/logo-page.png);
+  background-repeat: none;
+  font-size: 48px;
+  line-height: 68px;
+}
+
+#header h5 a {
+  margin-left: 100px;
+  padding: 0 10px;
+  background-color: #F8F8F8;
+}
+
+#header nav {
+  margin-top: 40px;
+}
+
+#header nav a.selected {
+  background-color: #5092bd;
+  color: #fff;
+  border-radius: 5px 5px 5px 5px;
+}
+
+
+section.content .wrapper {
+  border-left: 1px solid #dedede;
+  border-bottom: 1px solid #DEDEDE;
+  border-right: 1px solid #DEDEDE;
+  border-radius: 0 0 8px 8px;
+  margin: 0 2px 40px 2px;
+  top: 5px;
+  background-color: #fff;
+}
+
+
+section.content .wrapper h3.hidden-notice:after {
+  display: block;
+  content: "Hands-on session is active, this section code is currently hidden";
+  font: 14px "Helvetica Neue",Arial,"Lucida Grande",sans-serif;
+  padding: 3px 23px;
+  color: #888;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  margin: 10px -23px 0;
+}
+
+section.content .wrapper h3 small {
+  display: inline-block;
+  margin: 0 10px;
+  text-transform: uppercase;
+  font-size: 0.65em;
+}
+section.content .wrapper h3 small a {
+  color: #888;
+}
+
+section.content .wrapper h2,  section.content .wrapper h3 {
+  margin-top: 60px;
+}
+
+section.content .wrapper .step {
+  margin: 25px 0;
+}
+
+section.content .wrapper .hidden {
+  display: none !important;
+}
+
+section.content .wrapper .step p {
+  margin: 15px 0;
+}
+
+section.content .wrapper .test h4 {
+  background-color: #888;
+  color: white;
+  border: 1px solid #666;
+  padding: 3px 5px;
+  margin: 10px -4px;
+  /* color: #5092C3;
+  border-bottom: 1px solid #356282;
+  margin: 10px -23px;
+  padding: 0 23px; */
+}
+
+section.content .wrapper .test h4:after {
+  content: "test";
+  color: #666;
+  background-color: white;
+  border: 1px solid #666;
+  border-radius: 1px;
+  margin-left: 20px;
+  padding: 3px 5px;
+  font-weight: normal;
+}
+
+section.content .wrapper .step pre {
+  display: block;
+  padding: 5px;
+  margin: 5px 0 10px;
+  background-color: rgba(0,0,0,0.05)
+}
+section.content .wrapper .step pre code {
+  display: block;
+  background-color: transparent;
+}
+
+
+section.content .wrapper code {
+  display: inline-block;
+  padding: 2px 3px;
+  background-color: rgba(0,0,0,0.05);
+  border-radius: 2px;
+  text-shadow: 0 1px 0 #f9f9f9;
+}
+
+section.content .wrapper .hints {
+  position: relative;
+  left: -23px;
+  margin: 15px -46px 15px 0;
+  padding: 10px 20px 10px 52px;
+  background: #FAFFDD;
+  border: 1px solid #e9f2ae;
+  color: #666;
+}
+
+section.content .wrapper .hints h4 {
+  margin: 0;
+}
+
+section.content .wrapper .session-start-stop, section.content .wrapper .session-next-step {
+  float: right;
+  background-color: #888;
+  color: white;
+  text-shadow: 0 -1px 0 #666;
+  font-weight: bold;
+  outline: none;
+  border-radius: 2px;
+  border: 1px solid #666;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color .218s ease-in-out;
+  margin: 0 0 10px 10px;
+}
+
+section.content .wrapper .session-started, section.content .wrapper .session-next-step {
+  background-color: #c91414;
+  border-color: #a30e0e;
+  text-shadow: 0 -1px 0 #a30e0e;
+}
+
+section.content .wrapper .session-next-step-test {
+  margin-top: -7px;
+}

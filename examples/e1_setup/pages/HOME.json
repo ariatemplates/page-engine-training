@@ -1,0 +1,11 @@
+{
+    pageComposition : {
+        template : "examples.e1_setup.templates.MainLayout",
+        placeholders : {
+        	header : "Phone book | Home",
+        	middle : "Whatever you want",
+        	footer : "Just a footer, we might need it later"
+        }
+    },
+    pageId : "HOME"
+}

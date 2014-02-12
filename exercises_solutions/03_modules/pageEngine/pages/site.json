@@ -1,0 +1,8 @@
+{
+    containerId : "exercise-container",
+    commonModules : {
+        login : {
+            classpath : "exercises.handson.pageEngine.modules.login.Login"
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{CSSTemplate {
+	$classpath : "examples.e4_navigation.templates.HeaderLayoutCSS"
+}}
+
+	{macro main()}
+
+		.right-panel {
+			float: right;
+		}
+
+		.left-panel {
+			float: left;
+		}
+
+	{/macro}
+
+{/CSSTemplate}

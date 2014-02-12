@@ -1,0 +1,30 @@
+{
+    containerId : "exercise-container",
+    navigation : "hash",
+    animations : true,
+    appData : {
+        pages : [{
+                    label : "Home",
+                    pageId : "HOME"
+                }, {
+                    label : "Login",
+                    pageId : "LOGIN"
+                }, {
+                    label : "Posts",
+                    pageId : "POSTS"
+                }],
+        user : {
+            name : "",
+            password : "",
+            loggedIn : false
+        }
+    },
+    commonModules : {
+        login : {
+            classpath : "exercises.handson.pageEngine.modules.login.Login",
+            bind : {
+                "user" : "appData:user"
+            }
+        }
+    }
+}

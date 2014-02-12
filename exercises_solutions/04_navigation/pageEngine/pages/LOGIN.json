@@ -1,0 +1,26 @@
+{
+    pageComposition : {
+        template : "exercises.handson.pageEngine.templates.MainLayout",
+        placeholders : {
+            header : {
+                template : "exercises.handson.pageEngine.templates.Menu"
+            },
+            middle : {
+                template : "exercises.handson.pageEngine.templates.MiddleLayout"
+            },
+            "middle.top" : "Post reader - Login",
+            "middle.bottom" : {
+                template : "exercises.handson.pageEngine.templates.login.Login",
+                module : "common:login"
+            },
+            footer : "Something else will go here, maybe..."
+        }
+    },
+    pageId : "LOGIN",
+    title : "Post reader - Login",
+    url : "login",
+    animation : {
+        animateIn : "slide left",
+        animateOut : "slide left"
+    }
+}

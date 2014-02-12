@@ -1,0 +1,30 @@
+{
+	containerId : "main-container",
+	navigation : "hash",
+	animations : true,
+	appData : {
+		menu : [{
+			label : "Home",
+			pageId : "HOME"
+		}, {
+			label : "Search",
+			pageId : "SEARCH"
+		}, {
+			label : "Detail",
+			pageId : "DETAIL"
+		}],
+		user : {
+			name : "",
+			password : "",
+			loggedIn : false
+		}
+	},
+	commonModules: {
+		login : {
+			classpath : "examples.e5_datamodel.modules.login.Login",
+			bind : {
+				"user" : "appData:user"
+			}
+		}
+	}
+}

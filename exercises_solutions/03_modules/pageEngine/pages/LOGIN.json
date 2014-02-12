@@ -1,0 +1,18 @@
+{
+    pageComposition : {
+        template : "exercises.handson.pageEngine.templates.MainLayout",
+        placeholders : {
+            header : "The menu will go here",
+            middle : {
+                template : "exercises.handson.pageEngine.templates.MiddleLayout"
+            },
+            "middle.top" : "Post reader - Login",
+            "middle.bottom" : {
+                template : "exercises.handson.pageEngine.templates.login.Login",
+                module : "common:login"
+            },
+            footer : "Something else will go here, maybe..."
+        }
+    },
+    pageId : "LOGIN"
+}

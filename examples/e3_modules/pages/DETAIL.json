@@ -1,0 +1,32 @@
+{
+    pageComposition : {
+        template : "examples.e3_modules.templates.MainLayout",
+        placeholders : {
+        	"header" : {
+        		template : "examples.e3_modules.templates.HeaderLayout"
+        	},
+        	"header.leftPanel" : "Phone book | Detail",
+        	"header.rightPanel" : {
+        		template : "examples.e3_modules.templates.login.HeaderLogin",
+        		module : "common:login"
+        	},
+        	"middle" : {
+        		template : "examples.e3_modules.templates.MiddleLayout"
+        	},
+        	"middle.leftPanel" : {
+        		template : "examples.e3_modules.templates.Menu"
+        	},
+        	"middle.rightPanel" : {
+        		template : "examples.e3_modules.templates.detail.Detail",
+        		module : "detail"
+        	},
+        	"footer" : "Just a footer, we might need it later"
+        },
+        modules : {
+        	"detail" : {
+        		classpath : "examples.e3_modules.modules.detail.Detail"
+        	}
+        }
+    },
+    pageId : "DETAIL"
+}
