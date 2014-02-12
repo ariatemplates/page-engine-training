@@ -1,0 +1,62 @@
+{CSSTemplate {
+	$classpath : "examples.e3_modules.templates.MainLayoutCSS"
+}}
+
+	{macro main()}
+
+		.container {
+			margin: auto;
+			width: 800px;
+			font-weight: bold;
+			font-size: 20px;
+		}
+
+		.header {
+			height: 70px;
+			background-color: #34aadc;
+			border-radius: 0 0 5px 5px;
+			color: white;
+			padding: 10px;
+			font-size: 20px;
+		}
+
+		.middle {
+			height: 400px;
+			background-color: #f5f5f5;
+			border: 1px solid #c7c7cc;
+			border-radius: 5px;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+
+		.footer {
+			height: 50px;
+			background-color: #34aadc;
+			border-radius: 5px;
+			color: white;
+			padding: 10px;
+			font-size: 11px;
+		}
+
+		// General style of widgets
+
+		.pb-textInput {
+			height: 20px;
+			border-radius: 5px;
+			border: 1px solid #34aadc;
+			padding-left: 5px;
+		}
+
+		.pb-button {
+			background-color: #ff9500;
+			height: 22px;
+			color: white;
+			font-weight: bold;
+			border: 0px;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+	{/macro}
+
+{/CSSTemplate}

@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <title>Page Engine training</title>
+		<script> var Aria = {debug : true};</script>
+		<script type="text/javascript" src="http://cdn.ariatemplates.com/atlatest.js?root=/"></script>
+        <style>
+        	.xLDI {
+				background: #fff url(imgs/loading.gif) no-repeat center center;
+				_background-image: url(imgs/loading.gif) !important;
+				filter: alpha(opacity=80);
+				-moz-opacity: 0.8;
+				opacity: 0.8;
+			}
+
+            body {
+                padding: 0px;
+                margin: 0px;
+            }
+
+           .page {
+               top: 0px;
+               left: 0px;
+               position: absolute;
+               width: 100%;
+               min-height: 100%;
+               border: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="exercise-container" class="page"></div>
+
+        <script>
+
+            aria.core.AppEnvironment.setEnvironment({
+                defaultWidgetLibs : {
+                    "html" : "aria.html.HtmlLibrary",
+                    "embed" : "aria.embed.EmbedLib"
+                }
+            });
+
+            Aria.load({
+                classes: ["aria.pageEngine.PageEngine", "exercises.handson.pageEngine.pages.PageProvider"],
+                oncomplete: function() {
+
+                    var pageEngine = new aria.pageEngine.PageEngine();
+
+                    var pageProvider = new exercises.handson.pageEngine.pages.PageProvider({
+                        siteConfigLocation : "exercises/handson/pageEngine/pages/site.json",
+                        pageBaseLocation : "exercises/handson/pageEngine/pages/",
+                        homePageId : "POSTS"
+                    });
+
+                    pageEngine.start({
+                        pageProvider : pageProvider
+                    });
+                }
+            });
+
+        </script>
+    </body>
+</html>

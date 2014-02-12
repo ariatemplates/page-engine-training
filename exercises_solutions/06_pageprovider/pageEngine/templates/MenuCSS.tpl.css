@@ -1,0 +1,25 @@
+{CSSTemplate {
+	$classpath : "exercises.handson.pageEngine.templates.MenuCSS"
+}}
+
+	{macro main()}
+
+		.menu-item {
+			padding: 10px;
+			color: white;
+			cursor: pointer;
+			display: inline-block;
+		}
+
+		.menu-item:hover, .menu-item.selected {
+			color: white;
+			background-color: #ff9500;
+		}
+
+		.menu-item .label {
+			display: inline-block;
+		}
+
+	{/macro}
+
+{/CSSTemplate}

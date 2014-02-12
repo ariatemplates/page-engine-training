@@ -1,0 +1,10 @@
+{
+    containerId : "exercise-container",
+    navigation : "hash",
+    animations : true,
+    commonModules : {
+        login : {
+            classpath : "exercises.handson.pageEngine.modules.login.Login"
+        }
+    }
+}

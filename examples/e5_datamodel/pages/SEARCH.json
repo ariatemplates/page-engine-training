@@ -1,0 +1,47 @@
+{
+    pageComposition : {
+        template : "examples.e5_datamodel.templates.MainLayout",
+        placeholders : {
+        	"header" : {
+        		template : "examples.e5_datamodel.templates.HeaderLayout"
+        	},
+        	"header.leftPanel" : {
+        		template : "examples.e5_datamodel.templates.PageDescription"
+        	},
+        	"header.rightPanel" : {
+        		template : "examples.e5_datamodel.templates.login.HeaderLogin",
+        		module : "common:login"
+        	},
+        	"middle" : {
+        		template : "examples.e5_datamodel.templates.MiddleLayout"
+        	},
+        	"middle.leftPanel" : {
+        		template : "examples.e5_datamodel.templates.Menu"
+        	},
+        	"middle.rightPanel" : {
+        		template : "examples.e5_datamodel.templates.search.Search",
+        		module : "search"
+        	},
+        	"footer" : "Just a footer, we might need it later"
+        },
+        modules : {
+        	"search" : {
+        		classpath : "examples.e5_datamodel.modules.search.Search",
+        		bind : {
+					"loggedIn" : "appData:user.loggedIn",
+					"selected" : "appData:selectedContact"
+				}
+        	}
+        },
+        pageData : {
+        	description : "Search for your contacts"
+        }
+    },
+    pageId : "SEARCH",
+    url : "search",
+    title : "Phone book | Search",
+    animation : {
+    	animateIn : "slide left",
+    	animateOut : "slide left"
+    }
+}

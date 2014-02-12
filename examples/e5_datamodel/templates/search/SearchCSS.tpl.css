@@ -1,0 +1,55 @@
+{CSSTemplate {
+    $classpath : "examples.e5_datamodel.templates.search.SearchCSS"
+}}
+
+    {macro main()}
+
+		.searchPod {
+			padding: 10px;
+		}
+
+        .buttons {
+        	margin-top: 10px;
+            float: right;
+        }
+
+
+        label {
+            font-weight: bold;
+            color: #999;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-top: 50px;
+            color: #999;
+            width: 100%;
+        }
+
+        th, td {
+        	padding: 5px 20px;
+        }
+
+        tr:hover td {
+            cursor: pointer;
+            color: white;
+            background: #ff9500;
+        }
+
+        tr {
+        	border: 1px solid #efefef;
+        	text-align: left;
+        }
+
+        thead tr, tr.odd {
+        	background: #efefef;
+        }
+
+        .noresult {
+        	margin-top: 50px;
+            color: #999;
+        }
+
+    {/macro}
+
+{/CSSTemplate}

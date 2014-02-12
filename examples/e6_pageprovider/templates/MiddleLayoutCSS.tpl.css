@@ -1,0 +1,22 @@
+{CSSTemplate {
+	$classpath : "examples.e6_pageprovider.templates.MiddleLayoutCSS"
+}}
+
+	{macro main()}
+
+		.left-panel {
+			float: left;
+			border-right: 1px solid #c7c7cc;
+			width: 194px;
+			height: 400px;
+		}
+
+		.right-panel {
+			float: left;
+			width: 600px;
+			height: 400px;
+		}
+
+	{/macro}
+
+{/CSSTemplate}

@@ -1,0 +1,14 @@
+{CSSTemplate {
+    $classpath : "examples.e4_navigation.templates.detail.DetailCSS"
+}}
+
+    {macro main()}
+
+		.detail {
+			padding: 10px;
+			color: #999;
+		}
+
+	{/macro}
+
+{/CSSTemplate}

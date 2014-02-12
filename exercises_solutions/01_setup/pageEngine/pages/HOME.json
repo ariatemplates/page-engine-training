@@ -1,0 +1,11 @@
+{
+    pageComposition : {
+        template : "exercises.handson.pageEngine.templates.MainLayout",
+        placeholders : {
+            header : "The menu will go here",
+            middle : "Post reader - Home",
+            footer : "Something else will go here, maybe..."
+        }
+    },
+    pageId : "HOME"
+}
