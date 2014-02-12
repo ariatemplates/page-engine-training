@@ -1,0 +1,8 @@
+{
+	containerId : "main-container",
+	commonModules: {
+		login : {
+			classpath : "examples.e3_modules.modules.login.Login"
+		}
+	}
+}

@@ -1,0 +1,26 @@
+{
+    pageComposition : {
+        template : "exercises.handson.pageEngine.templates.MainLayout",
+        placeholders : {
+            header : {
+                template : "exercises.handson.pageEngine.templates.Menu"
+            },
+            middle : {
+                template : "exercises.handson.pageEngine.templates.MiddleLayout"
+            },
+            "middle.top" : "Post reader - Home",
+            "middle.bottom" : "Use this application to see your posts.",
+            footer : {
+                template : "exercises.handson.pageEngine.templates.login.Login",
+                module : "common:login"
+            }
+        }
+    },
+    pageId : "HOME",
+    title : "Post reader - Home",
+    url : "home",
+    animation : {
+        animateIn : "slide left",
+        animateOut : "slide left"
+    }
+}

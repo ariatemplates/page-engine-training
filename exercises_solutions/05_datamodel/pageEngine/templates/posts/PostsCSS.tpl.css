@@ -1,0 +1,29 @@
+{CSSTemplate {
+	$classpath : "exercises.handson.pageEngine.templates.posts.PostsCSS"
+}}
+
+	{macro main()}
+
+		.postsPanel {
+			width: 100%;
+			min-height: 200px;
+		}
+
+		.post {
+			margin-bottom: 20px;
+		}
+
+		.author {
+			color: #34aadc;
+			font-weight: bold;
+			font-size: 15px;
+		}
+
+		.username {
+			margin-bottom: 20px;
+			font-weight: bold;
+		}
+
+	{/macro}
+
+{/CSSTemplate}

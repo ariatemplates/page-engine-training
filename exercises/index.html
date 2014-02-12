@@ -1,0 +1,250 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Aria Templates Training - Page Engine Exercices</title>
+    <link rel="stylesheet" href="/exercises/assets/highlight.default.min.css">
+    <link rel="stylesheet" href="http://ariatemplates.com/styles/all.css" type="text/css">
+    <link rel="stylesheet" href="/exercises/assets/style.css">
+    <script type="text/javascript" src="/exercises/assets/classList.min.js"></script>
+    <script type="text/javascript" src="/exercises/assets/handson.js"></script>
+  </head>
+  <body>
+    <header id="header">
+      <div class="logo">
+        <h5><a href="#">training</a></h5>
+      </div>
+      <!-- nav>
+        <a class="selected" href="/exercises/e1_core/index.html">Core</a>
+        <a href="/exercises/e2_templates/">Templates</a>
+        <a href="/exercises/e3_controllers/">Controllers</a>
+      </nav -->
+    </header>
+    <div class="content-wrapper">
+      <section class="content">
+        <div class="wrapper">
+          <h1>Page Engine Exercise</h1>
+          <h2>Scope</h2>
+          <p>This session focuses on a simple but thorough usage of the Page Engine. You will practice:</p>
+          <ul>
+            <li>How to setup an instance of the page engine and create very simple pages by writing their page definitions.</li>
+            <li>How to use nested templates in a page definition.</li>
+            <li>How to declare and use global and page-specific modules.</li>
+            <li>The navigation API, different url change strategies and animations.</li>
+            <li>How to share data across pages and modules.</li>
+            <li>How to customise the page provider, which is where you can intervene in order to achieve the requirements of your page engine-based application.</li>
+          </ul>
+
+          <h2>Let's code!</h2>
+          <h4>Pre-requisites</h4>
+          <p>Create a <code>handson/</code> folder, located in the <code>/exercises/</code> folder. Inside of it, create a <code>pageEngine/</code> folder. This is where all the code belonging to this hands-on session is going to be written.</p>
+
+          <h4>Overview & Context</h4>
+          <p>The purpose of the exercise is to develop a simple application which allows logged users to view the posts of their friends.</p>
+
+          <div class="hints">
+            <p>You can find some documentation on the page engine <a href="http://www.ariatemplates.com/usermanual/latest/page_engine">here</a>.</p>
+          </div>
+
+          <h3>Setup and creation of simple page definitions</h3>
+          <div class="step">
+            <h4>step 1</h4>
+            <p>Create an <code>index.html</code> file based on this skeleton
+              <pre><code class="html"> &lt;html>
+    &lt;head>
+        &lt;meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        &lt;script> var Aria = {debug : true};&lt;/script>
+        &lt;script type="text/javascript" src="http://cdn.ariatemplates.com/at1411.js?root=/">&lt;/script>
+    &lt;/head>
+    &lt;body>
+        &lt;div id="exercise-container" class="page">&lt;/div>
+
+        &lt;script>
+            /* Your code goes here ! */
+        &lt;/script>
+    &lt;/body>
+&lt;/html></code></pre>
+            </p>
+            <p>Create an instance of the page engine and an instance of <a href="http://www.ariatemplates.com/aria/guide/apps/apidocs/#aria.pageEngine.pageProviders.BasePageProvider">BasePageProvider</a>, then start the page engine.</p>
+          </div>
+          <div class="hints">
+            <p>Remember to declare library <code>embed</code> (<code>aria.embed.EmbedLib</code>), which is necessary in order to embed placeholders.</p>
+          </div>
+          <div class="step">
+            <h4>step 2</h4>
+            <p>Create the main layout template that will be used in all pages. It should contain a <code>header</code>, a <code>middle</code> section and a <code>footer</code>. Feel free to style it the way you like. For code organisation purposes, put the template inside the <code>templates/</code> folder.</p>
+          </div>
+          <div class="step">
+            <h4>step 3</h4>
+            <p>Create a <code>pages/</code> folder. Inside of it, create</p>
+            <ul>
+            	<li>a file containing the <a href="http://www.ariatemplates.com/aria/guide/apps/apidocs/#aria.pageEngine.CfgBeans:Site">site configuration JSON</a></li>
+            	<li>two files containing the <a href="http://www.ariatemplates.com/aria/guide/apps/apidocs/#aria.pageEngine.CfgBeans:PageDefinition">definitions</a> of the pages <code>HOME</code> and <code>LOGIN</code>. In each page, define some textual content for each of the three placeholders declared in the main layout template.</li>
+            </ul>
+          </div>
+          <div class="step">
+            <h4>step 4</h4>
+            <p>Update the <code>index.html</code> file by adding the correct paths in the page provider constructor.</p>
+          </div>
+          <div class="step test">
+            <h4>step 5</h4>
+            <p>Launch the application, you should see the page you selected as home page when creating the page provider.</p>
+          </div>
+
+
+
+
+
+          <h3>Templates in placeholders</h3>
+          <p>Let's add a template inside a placeholder!</p>
+          <div class="step">
+            <h4>step 1</h4>
+            <p>Split the <code>middle</code> placeholder into a <code>top</code> and a <code>bottom</code> placeholder. In order to do so:</p>
+            <ul>
+              <li>Create a template that will be responsible for the layout of the <code>middle</code> section.</li>
+              <li>Update the two page definitions so that the <code>middle</code> placeholder is now filled with the template that you have just created.</li>
+              <li>Fill the <code>middle.top</code> placeholder with the title of the page and the <code>middle.bottom</code> one with whatever text you want.</li>
+            </ul>
+            <div class="hints">
+              <p>You can find the bean corresponding to a placeholder declaration <a href="http://www.ariatemplates.com/aria/guide/apps/apidocs/#aria.pageEngine.CfgBeans:Placeholder">here</a>.</p>
+            </div>
+          </div>
+          <div class="step test">
+            <h4>step 2</h4>
+            <p>Launch the application, you should see that the middle section is now split in two parts.</p>
+          </div>
+
+
+
+
+
+
+          <h3>Modules</h3>
+          <p>You will now have to embed modules inside placeholders. The purpose of this part of the exercise is not to create the module controllers, but just to embed them. The code for module controllers is already available in the <code>modules/</code> folder, and the templates that can be associated to them are available in the <code>templates/</code> folder.</p>
+          <div class="step">
+            <h4>step 1 - Common module</h4>
+            <p>Embed a login module inside your pages. To start with, create a <code>modules/</code> folder inside <code>handson/pageEngine/</code> and copy the <code>modules/login/</code> folder that you will find at the root of the exercise folder. Likewise, copy <code>templates/login</code> to <code>handson/pageEngine/templates/login/</code>.</p>
+            <p>The classpath of the login module controller is <code>"exercises.handson.pageEngine.modules.login.Login"</code>, the classpath of the template to display it is <code>"exercises.handson.pageEngine.templates.login.Login"</code>. Use this information to:</p>
+            <ul>
+              <li>Declare the login module as common module inside the <a href="http://www.ariatemplates.com/aria/guide/apps/apidocs/#aria.pageEngine.CfgBeans:Site">site configuration</a>.</li>
+              <li>Add the common module with the corresponding template in the <code>footer</code> placeholder of the <code>HOME</code> page.</li>
+              <li>Add the common module with the corresponding template in the <code>middle.bottom</code> placeholder of the <code>LOGIN</code> page.</li>
+            </ul>
+            <div class="hints">
+            	<p>Remember to use the <code>common:</code> prefix to refer to a common module.</p>
+            </div>
+          </div>
+          <div class="step">
+            <h4>step 2 - Page-specific module</h4>
+            <p>The purpose of this step is to create a new page in which to display a list of posts for the authenticated user.</p>
+            <ul>
+              <li>Copy the <code>modules/posts/</code> folder (that you can find at the root of the exercise folder) to <code>handson/pageEngine/modules/posts/</code>. Likewise, copy <code>templates/posts</code> to <code>handson/pageEngine/templates/posts/</code></li>
+              <li>Create page <code>POSTS</code> by creating a page definition that is similar to page <code>HOME</code>.</li>
+              <li>Add the correct declaration for the "posts" module (classpath <code>"exercises.handson.pageEngine.modules.posts.Posts"</code>) to the page definition of page <code>POSTS</code>. Embed the module inside the <code>middle.bottom</code> placeholder, by using template <code>"exercises.handson.pageEngine.templates.posts.Posts"</code>.</li>
+            </ul>
+          </div>
+          <div class="step test">
+            <h4>step 3</h4>
+            <p>Launch the application by setting each of the three pages as hompe page. Check that they are correctly displayed.</p>
+          </div>
+
+          <h3>Navigation</h3>
+          <p>Let's use the navigation API provided by the page engine.</p>
+          <div class="step">
+            <h4>step 1 - Navigate from a template</h4>
+            <p>Add a menu inside the <code>header</code> placeholder of all pages.</p>
+            <div class="hints">
+              <p>Use a simple template without any module. This will allow to directly link this template to the root module controller automatically created by the page engine. You can then use its <a href="http://www.ariatemplates.com/aria/guide/apps/apidocs/#aria.pageEngine.SiteRootModule:navigate:method">public navigate method</a>.</p>
+            </div>
+          </div>
+          <div class="step">
+            <h4>step 2 - Navigate from a module controller</h4>
+            <p>When the user logs in correctly, a navigation to page <code>POSTS</code> should occur. Implement this behaviour.</p>
+            <div class="hints">
+              <p>Remember that a navigation from a module controller can be triggered in two ways:</p>
+              <ul>
+              	<li>by raising the <code>"navigate"</code> event with the right <code>page</code> parameter,</li>
+              	<li>by calling the <a href="http://www.ariatemplates.com/aria/guide/apps/apidocs/#aria.pageEngine.PageEngine:navigate:method"><code>navigate</code></a> method on the instance of page engine that is injected in the initialisation argument of the controller.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="step">
+            <h4>step 3 - Document titles and urls</h4>
+            <p>Set a title and url property in each page definition. Then enable url changes upon navigation by setting the desired property inside the site configuration.</p>
+          </div>
+          <div class="step">
+            <h4>step 4 - Animations</h4>
+            <p>Enable animations.</p>
+          </div>
+
+
+          <h3>Data model and page engine events</h3>
+          <p>We will now face the communication between different parts of the application through the data model, and the reaction to page engine events.</p>
+          <div class="step">
+            <h4>step 1 - Application data</h4>
+            <p>The data for the menu has been so far hard-coded in the template. This step consists in moving them to the application data provided in the <a href="http://www.ariatemplates.com/aria/guide/apps/apidocs/#aria.pageEngine.CfgBeans:Site">site configuration</a>, and retrieving them from the template that is in charge of displaying the menu.</p>
+          </div>
+          <div class="step">
+            <h4>step 2 - Page information</h4>
+            <p>Retrieve the current <code>pageId</code> in order to highlight the current page in the menu.</p>
+          </div>
+          <div class="step">
+            <h4>step 3 - Module bindings</h4>
+            <p>Bind the user information of the login module to a property of the application data.</p>
+            <div class="hints">
+              <p>Look at this <a href="http://www.ariatemplates.com/aria/guide/apps/apidocs/#aria.pageEngine.CfgBeans:Module">bean definition</a> for the binding syntax.</p>
+            </div>
+         </div>
+          <div class="step">
+            <h4>step 4 - Retrieving data within a module controller</h4>
+            <p>Retrieve the login user information inside the init function of the posts module and copy them into its data model.</p>
+            <div class="hints">
+              <p>Use the <a href="http://www.ariatemplates.com/aria/guide/apps/apidocs/#aria.pageEngine.PageEngine:getData:method"><code>getData</code></a> method on the instance of the page engine received in the initialisation arguments.</p>
+            </div>
+         </div>
+          <div class="step">
+            <h4>step 5 - PageReady event</h4>
+            <p>Let the posts module listen to the <code>PageReady</code> event raised by the page engine. When the event is raised, the list of posts should be updated only if the current page is <code>POSTS</code>.</p>
+         </div>
+
+          <h3>Custom page provider</h3>
+          <p>When developing your application, you will certainly need to create your own page provider. In this part of the exercise you will be asked to develop a very simple provider.</p>
+          <div class="step">
+            <h4>step 1</h4>
+            <p>Create a class that extends <a href="http://www.ariatemplates.com/aria/guide/apps/apidocs/#aria.pageEngine.pageProviders.BasePageProvider"><code>aria.pageEngine.pageProviders.BasePageProvider</code></a>.</p>
+          </div>
+          <div class="step">
+            <h4>step 2</h4>
+            <p>Modify the <code>index.html</code> file in order to set the newly created class as page provider for the page engine.</p>
+          </div>
+          <div class="step">
+            <h4>step 3</h4>
+            <ul>
+            	<li>In the prototype of the <code>PageProvider</code> class, implement the method <a href="http://www.ariatemplates.com/aria/guide/apps/apidocs/#aria.pageEngine.pageProviders.BasePageProvider:processPageDefinition:method"><code>processPageDefinition</code></a> in order to override the parent's one. This method is called after retrieving the page definition contained in the <code>.json</code> file and it allows you to modify it before sending it to the page engine.</li>
+            	<li>For page <code>HOME</code>, change the animation type by selecting one from the <a href="http://www.ariatemplates.com/aria/guide/apps/apidocs/#aria.utils.css.AnimationsBean:AnimationName">list of available animations</a>.</li>
+            </ul>
+          </div>
+          <div class="step">
+            <h4>step 4 - Changing the flow</h4>
+            <ul>
+            	<li>In the prototype of the <code>PageProvider</code> class, implement the method <a href="http://www.ariatemplates.com/aria/guide/apps/apidocs/#aria.pageEngine.pageProviders.BasePageProvider:processSiteConfig:method"><code>processSiteConfig</code></a> in order to override the parent's one. This method is called after retrieving the site configuration contained in the <code>.json</code> file and it allows you to modify it before sending it to the page engine.</li>
+            	<li>In the constructor of the <code>PageProvider</code> class, create an instance variable that contains the application data that are now in the <code>.json</code> file, and remove them from the latter.</li>
+            	<li>Inject them inside the site configuration returned by the <code>processSiteConfig</code> method. This will allow you to keep a reference to them inside the <code>PageProvider</code>.</li>
+            	<li>Override method <a href="http://www.ariatemplates.com/aria/guide/apps/apidocs/#aria.pageEngine.pageProviders.BasePageProvider:loadPageDefinition:method"><code>loadPageDefinition</code></a>, which is called by the page engine every time a page navigation is needed. If a navigation to page <code>POSTS</code> occurs when the user is not logged in, fire an alert and redirect to the <code>LOGIN</code> page.</li>
+            </ul>
+          </div>
+
+
+        </div>
+      </section>
+    </div>
+    <footer id="footer">
+      <section class="content legal">© 2013 Aria Templates</section>
+    </footer>
+    <script src="/exercises/assets/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+      window.handson_core = handson("core");
+    </script>
+  </body>
+</html>

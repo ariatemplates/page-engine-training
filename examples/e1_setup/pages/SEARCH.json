@@ -1,0 +1,11 @@
+{
+    pageComposition : {
+        template : "examples.e1_setup.templates.MainLayout",
+        placeholders : {
+        	header : "Phone book | Search",
+        	middle : "Here we will add a search module",
+        	footer : "Just a footer, we might need it later"
+        }
+    },
+    pageId : "SEARCH"
+}
